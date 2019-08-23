@@ -2,7 +2,7 @@
 
 namespace RouletteMVC.Models
 {
-    class Wheel
+    public class Wheel
     {
         public Dictionary<int, string> wheel = new Dictionary<int, string>();
 

@@ -2,16 +2,42 @@
 
 namespace RouletteMVC.Models
 {
-    class GameBoard
+    public class GameBoard
     {
         Wheel w = new Wheel();
+
+        public int winningNumber { get; set; } = 12;
+        public string Color { get; set; } = "red";
+        public string EvenOdd { get; set; } = "even";
+        public int number { get; set; } = 3;
+        public string LowOrHigh { get; set; } = "low";
+        public string RowThirds { get; set; } = "FirstThird";
+        public int BetColumns { get; set; } = 1;
+        public int BetRows { get; set; } = 4;
+        public string BetDoubleRows { get; set; } = "1/2/3/4/5/6";
+        public string BetSplit { get; set; } = "1/2";
+        public string BetCorners { get; set; } = "1/2/4/5";
+
 
         int cash;
         public GameBoard(Player player)
         {
             cash = player.Money;
         }
-        public void IsColor(Ball b, string s)
+        //public void IsColor(Ball b, string s)
+        //{
+        //    string color = "";
+        //    w.wheel.TryGetValue(b.ballLocation, out color);
+
+        //    if (s == color)
+        //        cash += 100;
+        //    else
+        //        cash -= 100;
+
+        //    Console.WriteLine($"{color} wins the bet, you have {cash}");
+        //}
+
+        public string IsColor(Ball b, string s)
         {
             string color = "";
             w.wheel.TryGetValue(b.ballLocation, out color);
@@ -21,8 +47,9 @@ namespace RouletteMVC.Models
             else
                 cash -= 100;
 
-            Console.WriteLine($"{color} wins the bet, you have {cash}");
+            return $"{color} wins the bet, you have {cash}";
         }
+
 
         public void WinningNumber()
         {

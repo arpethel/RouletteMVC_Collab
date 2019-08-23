@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model RouletteMVC.Models.GameBoard
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Welcome to the Casino!</h4></div>
+        <div class="panel-body">
+            <div class="form-group">
+                @*<h2>Winning Number:</h2>*@
+                @*<p>@GameBoard.winningNumber</p>*@
+            </div>
+            <form class="p-a-1" asp-action="GameForm" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <h2>Color:</h2>
+                    <select class="form-control" asp-for="Color">
+                        <option value="">Choose an option</option>
+                        <option value="red">Bet on Red</option>
+                        <option value="black">Bet on Black</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h2>Even or Odd:</h2>
+                    <select class="form-control" asp-for="EvenOdd">
+                        <option value="">Choose an option</option>
+                        <option value="even">Bet on Even</option>
+                        <option value="odd">Bet on Odd</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h2>Bet by Number:</h2>
+                    <input class="form-control" asp-for="number" placeholder="Example: 2"/>
+                </div>
+
+                <div class="form-group">
+                    <h2>Low or High:</h2>
+                    <select class="form-control" asp-for="LowOrHigh">
+                        <option value="">Choose an option</option>
+                        <option value="low">Bet on Low</option>
+                        <option value="high">Bet on High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h2>Thirds:</h2>
+                    <select class="form-control" asp-for="RowThirds">
+                        <option value="">Choose an option</option>
+                        <option value="FirstThird">Bet on First Third</option>
+                        <option value="SecondThird">Bet on Second Third</option>
+                        <option value="LastThird">Bet on Last Third</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h2>Columns:</h2>
+                    <select class="form-control" asp-for="BetColumns">
+                        <option value="">Choose an option</option>
+                        <option value="1">Bet on First Column</option>
+                        <option value="2">Bet on Second Column</option>
+                        <option value="3">Bet on Last Column</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h2>Rows:</h2>
+                    <input class="form-control" asp-for="BetRows" placeholder="Example: 2"/>
+                </div>
+
+                <div class="form-group">
+                    <h2>Double Rows:</h2>
+                    <input class="form-control" asp-for="BetDoubleRows" placeholder="Example: 1/2/3/4/5/6"/>
+                </div>
+
+                <div class="form-group">
+                    <h2>Split:</h2>
+                    <input class="form-control" asp-for="BetSplit" placeholder="Example: 1/2"/>
+                </div>
+
+                <div class="form-group">
+                    <h2>Corners:</h2>
+                    <input class="form-control" asp-for="BetCorners" placeholder="Example: 1/2/4/5"/>
+                </div>
+
+
+
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">
+                        Submit Bets
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

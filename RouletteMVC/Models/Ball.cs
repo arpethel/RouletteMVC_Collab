@@ -2,7 +2,7 @@
 
 namespace RouletteMVC.Models
 {
-    class Ball
+    public class Ball
     {
         public int ballLocation { get; }
         public int row { get; set; }

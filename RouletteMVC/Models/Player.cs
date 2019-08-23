@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RouletteMVC.Models
 {
-    class Player
+    public class Player
     {
         public int Money { get; set; }
 
