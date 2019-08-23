@@ -1,1 +1,2 @@
-# RouletteMVC_Collab
+# RouletteMVC
+Console Game Turned MVC Web App
